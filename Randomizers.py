@@ -8,13 +8,13 @@ def d_roll(sides):
 
 
 while True:
-    randomizer_choice = str(input("Choose a randomizer:\n   Coinflip\n   Dice Roll\n   8 Ball\n\n"))
+    randomizer_choice = str(input("Choose a randomizer:\n   Coinflip\n   Dice Roll\n   8 Ball\n\n"))          # user inputs choice of randomizer
     
 
-        # Quit Option
+         # Quit Option
     if randomizer_choice == "quit" or randomizer_choice == "Quit":
         print("Aborting Randomizer Tools")
-        break
+        break                                                                                                 # "quit" aborts program
 
 
         # Coinflip
@@ -24,7 +24,7 @@ while True:
             coin_flip = str(input())
 
             if coin_flip == "":
-                coin_result = random.randint(1, 2)
+                coin_result = random.randint(1, 2)                                                            # random range of 1 & 2 act as heads/tails coinflip
                 if coin_result == 1:
                     print("Heads")
                 elif coin_result == 2:
@@ -36,16 +36,16 @@ while True:
         # Dice Roll
     elif randomizer_choice == "die" or randomizer_choice == "Die" or randomizer_choice == "dice" or randomizer_choice == "Dice":
         while True:
-            num_dice = int(input("Enter how many dice you wish to roll.\nEnter 0 to quit.\n"))
+            num_dice = int(input("Enter how many dice you wish to roll.\nEnter 0 to quit.\n"))                # user input number of dice
             if num_dice == 0:
                 break
 
             dice_to_roll = []
             for i in range(1, num_dice + 1):
-                num_sides = str(input(f"\nHow Many Sides Does Die {i} have?\n"))
+                num_sides = str(input(f"\nHow Many Sides Does Die {i} have?\n"))                              # user input number of sides for die, loop for each die
                 dice_to_roll.append(d_roll(int(num_sides)))
             print()
-            for i in range(1, num_dice + 1):
+            for i in range(1, num_dice + 1):                                                                  # dice results are output
                 print(f"Die {i} (D{num_sides}) rolled a {dice_to_roll[i - 1]}")
             print(f"Dice Result Total is {sum(dice_to_roll)}\n")
         
@@ -55,13 +55,13 @@ while True:
         print("Enter Your Query to recieve an answer.\n Enter ""quit"" or ""stop"" to exit 8 Ball.\n\n")
         while True:
             eb_query = str(input())
-            eb_answer = random.randint(1,20)
+            eb_answer = random.randint(1,20)                                                                  # random range of 1-20 for 8 ball responses
 
             if eb_query == "stop" or eb_query == "Stop" or eb_query == "quit" or eb_query == "Quit" or eb_query == "exit" or eb_query == "Exit":
                 print("Exiting 8 Ball.")
                 break
             
-            else:
+            else:                                                                                             # every 8 ball response
                 if eb_answer == 1:
                     print("It is certain.\n")
                 elif eb_answer == 2:
